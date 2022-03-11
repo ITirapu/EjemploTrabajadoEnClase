@@ -1,0 +1,43 @@
+version: '2'
+services:
+  mysql:
+    build: ./constructor/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+    ports:
+      - "3306:3306"
+
+  php:
+    build: ./constructor/php56
+    ports:
+      - '80:80'
+    volumes_from:
+      - data
+    depends_on:
+      - mysql
+
+  data:
+    image: busybox
+    container_name: data
+    volumes:
+      - .:/var/www/html
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: pass
+    restart: always
+    ports:
+     - 8100:80
+    depends_on:
+      - mysql
+
+volumes:
+  data:
+
+networks:
+    front:
+        driver: bridge

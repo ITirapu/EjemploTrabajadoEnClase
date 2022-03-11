@@ -1,0 +1,121 @@
+/* fuentes:
+https://www.w3schools.com/html/html_layout.asp
+https://peterned.home.xs4all.nl/
+modificaciones: Karmele Arocena */
+@import url(bootstrap-grid.css);
+@import url(bootstrap.css);
+@import url(bootstrap-reboot.css);
+@import url(bootstrap.min.css);
+:root{
+    --clr-secund: hsl(323 21% 22%);
+    --clr-claro: hsl(323 21% 70%);
+    --clr-bg: rgb(66, 43, 57);
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-bg);
+    margin: 0;
+}
+
+/*El contenedor principal */
+
+main {
+    background: var(--clr-bg);
+    margin: 0 auto;
+    /* centrado, no en IE5 */
+    width: 80%;
+}
+
+/* La sección. Si se añaden más secciones y se cambia el % se convierten en columnas */
+
+section {
+    position: relative;
+    
+    
+    /* min-height: 420px; */
+    width: 100%;
+}
+
+
+
+/* Estilos añadidos para los ejercicios */
+
+/********************************************************************
+* Estilos para el formulario
+************************************************/
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: var(--clr-secund);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: var(--clr-claro);
+    border: 4px solid var(--clr-secund);
+    transition: 1.3s;
+}
+
+div {
+    border-radius: 5px;
+    background-color: var(--clr-claro);
+    color: white;
+    padding: 20px;
+    width: 100%;
+
+    margin-bottom: 1%;
+}
+div h1{
+    text-align: center;
+}
+div .uno {
+    background-color: var(--clr-secund);
+    width: 100%;
+
+}
+
+input[type=radio] {
+    width: 2em;
+    margin-left: 3em;
+}
+
+input[type='checkbox'] {
+    width: 2%;
+    margin: 8px;
+    margin-left: 2em;
+}
+
+select {
+    padding: 10px;
+    height: 5em;
+}
+
+option {
+    min-height: 2em;
+    padding: 2px 2px 2px;
+}
+
+
+
+#usuario, #clave {
+    width: 8em;
+    float: left;
+}
